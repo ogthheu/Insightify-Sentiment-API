@@ -11,6 +11,7 @@ import re
 
 app = FastAPI(title="Simple Sentiment Analyst AI", version="1.0.2")
 
+# Configure CORS to allow requests from any origin
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],    
@@ -22,13 +23,19 @@ app.add_middleware(
 class ConditionInput(BaseModel):
     text_input: str
 
+# Global variables for model storage (Lazy Loading)
 lan_model_id = None
 lan_model_en = None
 
 def load_models():
+    """
+    Loads the sentiment analysis models into global variables.
+    Uses a singleton pattern to ensure models are only loaded once.
+    """
     global lan_model_id, lan_model_en
     try:
-        if lan_model_id is None or lan_model_en is None: # Cek, jika masih kosong, baru di-load
+        # Check if models are empty; if so, load them for the first time
+        if lan_model_id is None or lan_model_en is None: 
             print("Mencoba memuat model untuk PERTAMA KALI...")
             lan_model_id = pipeline("sentiment-analysis", model="w11wo/indonesian-roberta-base-sentiment-classifier")
             lan_model_en = pipeline("sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
@@ -98,16 +105,16 @@ def predict(data: ConditionInput):
 
     text = data.text_input
 
-    # [ERROR 2] Empty Input Validation (PENTING!)
-    # Mencegah user mengirim string kosong atau spasi saja
+    # [ERROR 2] Empty Input Validation (CRITICAL!)
+    # Prevent users from sending empty strings or just whitespace
     if not text or not text.strip():
         raise HTTPException(status_code=400, detail="Input Error: Text cannot be empty or just whitespace.")
 
     try:
-        # Panggil Model
+        # Call the Model
         result = lan_model_en(text)
         
-        # Safety Check: Pastikan model mengembalikan list dan punya key 'label'
+        # Safety Check: Ensure the model returns a list and has the 'label' key
         if not result or "label" not in result[0] or "score" not in result[0]:
              raise HTTPException(status_code=500, detail="AI Error: Model returned unexpected format.")
 
@@ -116,7 +123,7 @@ def predict(data: ConditionInput):
         return {'prediction': sentiment, "confidence": confidence}
 
     except Exception as e:
-        # Catch-all error
+        # Catch-all error for unexpected issues
         raise HTTPException(status_code=500, detail=f"Internal server error during prediction: {str(e)}")
 
 
@@ -135,7 +142,7 @@ def predict(data: ConditionInput):
         raise HTTPException(status_code=400, detail="Input Error: Text cannot be empty or just whitespace.")
 
     try:
-        # Panggil Model ID
+        # Call the Indonesian Model
         result = lan_model_id(text)
         
         # Safety Check Output
@@ -172,13 +179,13 @@ async def predict(
     # [ERROR 3] File Reading Process
     try:
         contents = await file.read()
-        buffer = io.BytesIO(contents)
+        buffer = io.BytesIO(contents) # Convert binary content to a file-like object
 
         if file.filename.endswith('.csv'):
             try:
                 data = pd.read_csv(buffer)
             except UnicodeDecodeError:
-                # Try other encoding if UTF-8 fails
+                # Try other encoding if UTF-8 fails (e.g., latin1 for Excel CSVs)
                 buffer.seek(0)
                 data = pd.read_csv(buffer, encoding='latin1')
             except pd.errors.EmptyDataError:
@@ -220,6 +227,7 @@ async def predict(
 
         if "Sentiment" not in data.columns and "Confidence" not in data.columns:
             try:
+                # Predict sentiment for each row
                 data['Sentiment'] = data['komentar'].apply(lambda x: lan_model_en(x)[0]["label"])
                 data['Confidence'] = data['komentar'].apply(lambda x: f"{round(lan_model_en(x)[0]['score'] * 100, 1)}%")
             except Exception as e:
@@ -233,9 +241,10 @@ async def predict(
             if corpus_data.empty:
                  result = [] # Safe empty list
             else:
+                 # Extract Top N-Grams
                  result = get_top_n_words_en(corpus=corpus_data, n=num, ngram_range=(ngram_min, ngram_max))
         except ValueError as ve:
-             # Usually n-gram error
+             # Usually n-gram error if corpus is too small
              print(f"N-Gram Warning: {ve}")
              result = [] 
 
@@ -243,6 +252,7 @@ async def predict(
 
         # Statistics error handling (division by zero, regex fail, etc.)
         try:
+            # Calculate text length (sentences) and word length
             data['Text Length'] = data["komentar"].apply(lambda x: len([x for x in re.split(r'[.!?]+', x) if x.strip()]))
             data['Word Length'] = data["komentar"].apply(lambda x: len(x.split()))
 
