@@ -39,29 +39,31 @@ For further instructions on running the application, follow these steps:
 1. **Windows Users**: Double-click the `.exe` file to launch the application.
 2. **macOS Users**: Open the `.dmg` file and drag the application into your Applications folder, then launch it.
 3. **Linux Users**: Open a terminal, navigate to the downloaded file, and run it by typing `./<file-name>`.
+4. **Source Users**: Install dependencies with `pip install -r requirements.txt`, then run `uvicorn main:app`.
 
 ## 🔌 API Usage
 Once the application is running, you can access its powerful API features. 
 
-- **Base URL**: The API is accessible at `http://localhost:8000/api`.
-- **Sentiment Analysis Endpoint**: Send a POST request to `http://localhost:8000/api/sentiment` with your text data.
-- **Batch Processing Endpoint**: Upload a CSV or Excel file to `http://localhost:8000/api/batch-analyze` for bulk processing.
+- **Base URL**: The API is accessible at `http://localhost:8000`.
+- **English Sentiment Endpoint**: Send a POST request to `/predict-sentiment/en` with JSON data.
+- **Indonesian Sentiment Endpoint**: Send a POST request to `/predict-sentiment/id` with JSON data.
+- **Batch Processing Endpoints**: Upload a CSV or Excel file to `/predict-table-sentiment/en` or `/predict-table-sentiment/id`.
 
 ## 👨‍💻 Example API Request
 Here’s a simple example to send a text for sentiment analysis:
 
 ```bash
-curl -X POST http://localhost:8000/api/sentiment -H "Content-Type: application/json" -d '{"text": "I love using Insightify!"}'
+curl -X POST http://localhost:8000/predict-sentiment/en -H "Content-Type: application/json" -d '{"text_input": "I love using Insightify!"}'
 ```
 
 You will receive a response containing the sentiment result, indicating whether the sentiment is positive, negative, or neutral.
 
 ## 🔄 Batch Processing Example
-For batch processing, create a CSV file with a column named "text" and upload it via the batch process endpoint.
+For batch processing, create a CSV file with a column named "komentar" and upload it via the batch process endpoint.
 
 ### Sample CSV Format:
 ```
-text
+komentar
 "I enjoy this service!"
 "This is terrible."
 ```
