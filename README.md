@@ -67,6 +67,33 @@ komentar
 
 Upload the file using the specified endpoint to receive a sentiment analysis for each entry.
 
+## Analyze Xquik Search Results
+
+[Xquik](https://xquik.com) search results can feed Insightify's existing batch
+sentiment endpoint. This example requires `curl`, `jq`, and an
+`XQUIK_API_KEY` environment variable:
+
+```bash
+curl --fail --silent --show-error --get \
+  "https://xquik.com/api/v1/x/tweets/search" \
+  --header "x-api-key: ${XQUIK_API_KEY}" \
+  --data-urlencode "q=bitcoin" \
+  --data-urlencode "limit=100" \
+  | jq -r '(["komentar"], (.tweets[] | [.text])) | @csv' \
+  > xquik_tweets.csv
+
+curl --fail --silent --show-error \
+  --request POST "http://localhost:8000/predict-table-sentiment/en" \
+  --form "file=@xquik_tweets.csv" \
+  --form "num=5" \
+  --form "sentiment=positive"
+```
+
+Keep API keys in environment variables and out of source control.
+
+Xquik is an independent third-party service. Not affiliated with X Corp.
+"Twitter" and "X" are trademarks of X Corp.
+
 ## 📊 Additional Features
 - **Data Visualization**: After processing, visualize the results on dashboards. Use libraries like Matplotlib to create informative charts.
 - **Save Results**: Export the analysis results as CSV for further examination or reporting.
